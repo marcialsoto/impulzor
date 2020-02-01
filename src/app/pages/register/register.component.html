@@ -1,169 +1,177 @@
-<form
-  (ngSubmit)="onSubmit(registerForm)"
-  #registerForm="ngForm"
-  class="form-signin">
-    <div class="text-center mb-4">
-      <!-- <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-      <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
-      <!-- <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p> -->
-    </div>
-  
-    <div *ngIf="registerForm.submitted && registerForm.controls['email'].errors">
-      <div class="invalid-feedback d-block">
-        El correo es inválido
+<div class="wrapper">
+  <form
+    (ngSubmit)="onSubmit(registerForm)"
+    #registerForm="ngForm"
+    class="form-signin">
+      <div class="text-center mb-4">
+        <!-- <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+        <svg height="80" viewBox="0 0 302 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.584 28.272C6.844 28.272 5.41333 27.7693 4.292 26.764C3.20933 25.72 2.668 24.444 2.668 22.936C2.668 21.3893 3.20933 20.1133 4.292 19.108C5.41333 18.064 6.844 17.542 8.584 17.542C10.2853 17.542 11.6773 18.064 12.76 19.108C13.8813 20.1133 14.442 21.3893 14.442 22.936C14.442 24.444 13.8813 25.72 12.76 26.764C11.6773 27.7693 10.2853 28.272 8.584 28.272ZM13.514 31.636V64H3.596V31.636H13.514ZM61.9975 31.288C66.0188 31.288 69.2088 32.506 71.5675 34.942C73.9648 37.378 75.1635 40.7613 75.1635 45.092V64H65.3035V46.426C65.3035 44.338 64.7428 42.7333 63.6215 41.612C62.5388 40.452 61.0308 39.872 59.0975 39.872C57.1641 39.872 55.6368 40.452 54.5155 41.612C53.4328 42.7333 52.8915 44.338 52.8915 46.426V64H43.0315V46.426C43.0315 44.338 42.4708 42.7333 41.3495 41.612C40.2668 40.452 38.7588 39.872 36.8255 39.872C34.8921 39.872 33.3648 40.452 32.2435 41.612C31.1608 42.7333 30.6195 44.338 30.6195 46.426V64H20.7015V31.636H30.6195V35.696C31.6248 34.3427 32.9395 33.2793 34.5635 32.506C36.1875 31.694 38.0241 31.288 40.0735 31.288C42.5095 31.288 44.6748 31.81 46.5695 32.854C48.5028 33.898 50.0108 35.3867 51.0935 37.32C52.2148 35.5413 53.7421 34.0913 55.6755 32.97C57.6088 31.8487 59.7161 31.288 61.9975 31.288ZM92.0179 36.218C92.9846 34.71 94.3186 33.492 96.0199 32.564C97.7212 31.636 99.7126 31.172 101.994 31.172C104.662 31.172 107.079 31.8487 109.244 33.202C111.409 34.5553 113.111 36.4887 114.348 39.002C115.624 41.5153 116.262 44.4347 116.262 47.76C116.262 51.0853 115.624 54.024 114.348 56.576C113.111 59.0893 111.409 61.042 109.244 62.434C107.079 63.7873 104.662 64.464 101.994 64.464C99.7512 64.464 97.7599 64 96.0199 63.072C94.3186 62.144 92.9846 60.9453 92.0179 59.476V79.428H82.0999V31.636H92.0179V36.218ZM106.17 47.76C106.17 45.2853 105.474 43.352 104.082 41.96C102.729 40.5293 101.047 39.814 99.0359 39.814C97.0639 39.814 95.3819 40.5293 93.9899 41.96C92.6366 43.3907 91.9599 45.3433 91.9599 47.818C91.9599 50.2927 92.6366 52.2453 93.9899 53.676C95.3819 55.1067 97.0639 55.822 99.0359 55.822C101.008 55.822 102.69 55.1067 104.082 53.676C105.474 52.2067 106.17 50.2347 106.17 47.76ZM153.423 31.636V64H143.505V59.592C142.5 61.0227 141.127 62.1827 139.387 63.072C137.686 63.9227 135.791 64.348 133.703 64.348C131.228 64.348 129.044 63.8067 127.149 62.724C125.254 61.6027 123.785 59.998 122.741 57.91C121.697 55.822 121.175 53.3667 121.175 50.544V31.636H131.035V49.21C131.035 51.3753 131.596 53.0573 132.717 54.256C133.838 55.4547 135.346 56.054 137.241 56.054C139.174 56.054 140.702 55.4547 141.823 54.256C142.944 53.0573 143.505 51.3753 143.505 49.21V31.636H153.423ZM170.465 21.08V64H160.547V21.08H170.465ZM186.933 55.822H200.969V64H175.855V56.112L189.311 39.814H175.971V31.636H200.679V39.524L186.933 55.822ZM290.09 37.03C291.25 35.2513 292.7 33.8593 294.44 32.854C296.18 31.81 298.114 31.288 300.24 31.288V41.786H297.514C295.04 41.786 293.184 42.3273 291.946 43.41C290.709 44.454 290.09 46.31 290.09 48.978V64H280.172V31.636H290.09V37.03Z" fill="#5245B6"/>
+          <path d="M211.56 46.2619H220.52L223.08 41.2597L226.92 51.2642L231.4 30.0045L236.52 57.5171L242.92 41.2597L246.76 51.2642L249.96 46.2619H257.64" stroke="#FB3D4E" stroke-width="2" stroke-miterlimit="50" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M258.92 43.7608C257.507 43.7608 256.36 44.8813 256.36 46.2619C256.36 47.6426 257.507 48.7631 258.92 48.7631C260.333 48.7631 261.48 47.6426 261.48 46.2619C261.48 44.8813 260.333 43.7608 258.92 43.7608Z" fill="#FB3D4E"/>
+          <path class="animated fadeIn infinite" d="M254.914 20C249.422 20 244.602 22.3261 240.972 26.7281C237.342 22.3261 232.542 20 227.086 20C217.115 20 209 27.9611 209 37.7506C209 39.4063 209.164 40.992 209.453 42.5102H212.072C211.744 40.9945 211.56 39.4088 211.56 37.7506C211.56 29.3417 218.526 22.5011 227.086 22.5011C231.81 22.5011 235.813 24.4545 238.988 28.3063C239.234 28.6064 239.961 29.5193 239.961 29.5193C240.444 30.1296 241.497 30.1296 241.983 29.5193C241.983 29.5168 242.708 28.6064 242.958 28.3063C246.087 24.507 250.219 22.5011 254.914 22.5011C263.474 22.5011 270.44 29.3417 270.44 37.7506C270.44 52.2547 256.946 61.1212 247.093 67.5916C244.781 69.1098 242.692 70.7681 240.995 72.1487C239.641 71.0607 236.907 68.9072 234.902 67.5916C228.197 63.1821 219.803 57.6646 215.129 50.0136H212.159C216.921 58.7826 226.152 64.8554 233.476 69.6676C236.067 71.3684 240.135 74.6974 240.178 74.7324C240.398 74.915 240.68 75 240.967 75C241.3 75 241.635 74.8849 241.891 74.6774C243.598 73.2817 245.933 71.3684 248.521 69.6701C258.851 62.882 273 53.5878 273 37.7506C273 27.9611 264.885 20 254.914 20Z" fill="#FB3D4E"/>
+        </svg>
+        <h5 class="mb-3 mt-4">Registro</h5>
+        <!-- <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p> -->
       </div>
-    </div>
-
-    <div class="form-label-group">
-      <input
-        type="email"
-        class="form-control"
-        placeholder="Email address"
-        required autofocus 
-        name="email"
-        required
-        email
-        [(ngModel)]="user.email">
-      <label for="inputEmail">Correo</label>
-      
-      
-    </div>
-
-    <div *ngIf="registerForm.submitted && registerForm.controls['name'].errors">
-      <div class="invalid-feedback d-block">
-        Ingrese nombre y apellidos
-      </div>
-    </div>
-
-    <div class="form-label-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Nombre y apellidos"
-        name="name"
-        [(ngModel)]="user.name"
-        required
-        minlength="2">
-      <label for="inputName">Nombre y Apellidos</label>
-      
-    </div>
-  
-    <div *ngIf="registerForm.submitted && registerForm.controls['password'].errors">
-      <div class="invalid-feedback d-block">
-        Ingrese clave de al menos 3 dígitos
-      </div>
-    </div>
-
-    <div class="form-label-group">
-      <input
-        type="password"
-        class="form-control"
-        placeholder="Password" 
-        name="password"
-        [(ngModel)]="user.password"
-        required
-        minlength="3">
-      <label for="inputPassword">Clave</label>
-      
-    </div>
-
-    <div class="radio mb-3">
-      <div *ngIf="registerForm.submitted && registerForm.controls['gender'].errors">
-        <div class="invalid-feedback d-block">
-          Ingrese sexo
-        </div>
-      </div>
-
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="gender"
-          id="radioGenderM"
-          value="M"
-          [(ngModel)]="user.gender"
-          required>
-        <label class="form-check-label" for="radioGenderM">Masculino</label>
-      </div>
-
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="gender"
-          id="radioGenderF"
-          value="F"
-          [(ngModel)]="user.gender"
-          required>
-        <label class="form-check-label" for="radioGenderF">Femenino</label>
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="col-6">
-        <div *ngIf="registerForm.submitted && registerForm.controls['weight'].errors">
-          <div class="invalid-feedback d-block">
-            Ingrese peso
-          </div>
-        </div>
-        <div class="input-group mb-3">      
-          <input
-            type="number"
-            class="form-control"
-            placeholder="Peso"
-            aria-label="Peso"
-            aria-describedby="weight"
-            name="weight"
-            [(ngModel)]="user.weight"
-            required>
-          <div class="input-group-append">
-            <span class="input-group-text" id="weight">kg</span>
-          </div>
-
-        </div>
-      </div>
-      <div class="col-6">
-        <div *ngIf="registerForm.submitted && registerForm.controls['height'].errors">
-          <div class="invalid-feedback d-block">
-            Ingrese altura
-          </div>
-        </div>
-        <div class="input-group mb-3">      
-          <input
-            type="number"
-            class="form-control"
-            placeholder="Altura"
-            aria-label="Altura"
-            aria-describedby="height"
-            name="height"
-            [(ngModel)]="user.height"
-            required>
-          <div class="input-group-append">
-            <span class="input-group-text" id="height">cm</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>
     
-    <div class="row">
-      <div class="col-6">
-        <div class="checkbox mb-3 mt-3">
-          <label>
-            <input 
-              type="checkbox"
-              name="remember-me"
-              [(ngModel)]="rememberMe"> Recordar
-          </label>
+      <div *ngIf="registerForm.submitted && registerForm.controls['email'].errors">
+        <div class="invalid-feedback d-block">
+          El correo es inválido
         </div>
       </div>
-      <div class="col-6">
-        <p class=" mb-3 mt-3 text-right">
-          <a [routerLink]="[ '/login' ]">Iniciar sesión</a>
-        </p>
+  
+      <div class="form-label-group">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email address"
+          required autofocus 
+          name="email"
+          required
+          email
+          [(ngModel)]="user.email">
+        <label for="inputEmail">Correo</label>
+        
+        
       </div>
-    </div>
-    <!-- <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p> -->
+  
+      <div *ngIf="registerForm.submitted && registerForm.controls['name'].errors">
+        <div class="invalid-feedback d-block">
+          Ingrese nombre y apellidos
+        </div>
+      </div>
+  
+      <div class="form-label-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nombre y apellidos"
+          name="name"
+          [(ngModel)]="user.name"
+          required
+          minlength="2">
+        <label for="inputName">Nombre y Apellidos</label>
+        
+      </div>
+    
+      <div *ngIf="registerForm.submitted && registerForm.controls['password'].errors">
+        <div class="invalid-feedback d-block">
+          Ingrese clave de al menos 3 dígitos
+        </div>
+      </div>
+  
+      <div class="form-label-group">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password" 
+          name="password"
+          [(ngModel)]="user.password"
+          required
+          minlength="3">
+        <label for="inputPassword">Clave</label>
+        
+      </div>
+  
+      <div class="radio mb-3">
+        <div *ngIf="registerForm.submitted && registerForm.controls['gender'].errors">
+          <div class="invalid-feedback d-block">
+            Ingrese sexo
+          </div>
+        </div>
+  
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="radioGenderM"
+            value="M"
+            [(ngModel)]="user.gender"
+            required>
+          <label class="form-check-label" for="radioGenderM">Masculino</label>
+        </div>
+  
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="radioGenderF"
+            value="F"
+            [(ngModel)]="user.gender"
+            required>
+          <label class="form-check-label" for="radioGenderF">Femenino</label>
+        </div>
+  
+      </div>
+  
+      <div class="row">
+        <div class="col-6">
+          <div *ngIf="registerForm.submitted && registerForm.controls['weight'].errors">
+            <div class="invalid-feedback d-block">
+              Ingrese peso
+            </div>
+          </div>
+          <div class="input-group mb-3">      
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Peso"
+              aria-label="Peso"
+              aria-describedby="weight"
+              name="weight"
+              [(ngModel)]="user.weight"
+              required>
+            <div class="input-group-append">
+              <span class="input-group-text" id="weight">kg</span>
+            </div>
+  
+          </div>
+        </div>
+        <div class="col-6">
+          <div *ngIf="registerForm.submitted && registerForm.controls['height'].errors">
+            <div class="invalid-feedback d-block">
+              Ingrese altura
+            </div>
+          </div>
+          <div class="input-group mb-3">      
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Altura"
+              aria-label="Altura"
+              aria-describedby="height"
+              name="height"
+              [(ngModel)]="user.height"
+              required>
+            <div class="input-group-append">
+              <span class="input-group-text" id="height">cm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>
+      
+      <div class="row">
+        <div class="col-6">
+          <div class="checkbox mb-3 mt-3">
+            <label>
+              <input 
+                type="checkbox"
+                name="remember-me"
+                [(ngModel)]="rememberMe"> Recordar
+            </label>
+          </div>
+        </div>
+        <div class="col-6">
+          <p class=" mb-3 mt-3 text-right">
+            <a [routerLink]="[ '/login' ]">Iniciar sesión</a>
+          </p>
+        </div>
+      </div>
+      <!-- <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p> -->
   </form>
+</div>

@@ -1,5 +1,59 @@
-    <li class="text" *ngFor="let item of bpms | async">
-      {{item.bmp}}
-    </li>
+<div class="wrapper">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
 
-<button (click)="logout()">Salir</button>
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </nav>
+
+  <app-aside></app-aside>
+
+  <div class="content-wrapper">
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="card text-center">
+              <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Última</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+
+                <div class="media">
+                  <svg class="bd-placeholder-img mr-3" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.92004 24H8.64004L10.56 20.16L13.44 27.84L16.8 11.52L20.64 32.64L25.44 20.16L28.32 27.84L30.72 24H36.48" stroke="#FB3D4E" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M37.44 22.08C36.9308 22.08 36.4424 22.2823 36.0824 22.6424C35.7223 23.0024 35.52 23.4908 35.52 24C35.52 24.5092 35.7223 24.9976 36.0824 25.3576C36.4424 25.7177 36.9308 25.92 37.44 25.92C37.9492 25.92 38.4376 25.7177 38.7977 25.3576C39.1577 24.9976 39.36 24.5092 39.36 24C39.36 23.4908 39.1577 23.0024 38.7977 22.6424C38.4376 22.2823 37.9492 22.08 37.44 22.08ZM38.208 43.2C38.304 43.2 38.4 43.296 38.4 43.392V44.928C38.4 45.024 38.304 45.12 38.208 45.12H36.672C36.576 45.12 36.48 45.024 36.48 44.928V43.392C36.48 43.296 36.576 43.2 36.672 43.2H38.208ZM36.672 35.52C36.576 35.52 36.48 35.616 36.48 35.712V41.088C36.48 41.184 36.576 41.28 36.672 41.28H38.208C38.304 41.28 38.4 41.184 38.4 41.088V35.712C38.4 35.616 38.304 35.52 38.208 35.52H36.672Z" fill="#FB3D4E"/>
+                    <path d="M13.5658 5.76C17.1082 5.76 20.111 7.26048 22.4918 10.2173C22.6762 10.4477 23.2214 11.1494 23.2214 11.1494C23.5853 11.6179 24.3744 11.6179 24.7382 11.1494C24.7382 11.1485 25.2816 10.4496 25.4688 10.2182C27.815 7.3008 30.9149 5.76 34.4342 5.76C40.8566 5.76 46.08 11.0112 46.08 17.4653C46.08 22.367 44.1149 26.4269 41.2896 29.8627L42.3043 31.6675C45.625 27.8371 48 23.2147 48 17.4653C48 9.95232 41.9146 3.84 34.4342 3.84C30.3168 3.84 26.7014 5.6256 23.9789 9.0048C21.2573 5.6256 17.6563 3.84 13.5658 3.84C6.08544 3.84 0 9.95232 0 17.4653C0 18.7382 0.12288 19.9536 0.33984 21.12H2.304C2.05824 19.9555 1.92 18.7402 1.92 17.4653C1.92 11.0112 7.14336 5.76 13.5658 5.76Z" fill="#FB3D4E"/>
+                    <path d="M47.904 45.696L39.264 30.336C39.072 29.952 38.496 28.8 37.44 28.8C36.384 28.8 35.808 29.952 35.616 30.336L26.976 45.696C26.88 45.888 26.88 45.984 26.88 46.176C26.88 47.232 27.744 48 28.704 48H46.176C47.136 48 48 47.232 48 46.176C48 45.984 48 45.888 47.904 45.696ZM28.992 46.08L37.44 30.9322L45.888 46.08H28.992ZM25.1904 44.8032L25.2125 44.76L25.2365 44.7178L27.0864 41.4298C25.9421 42.2755 24.8937 43.1261 23.9981 43.872C22.9814 43.0368 20.9309 41.3837 19.4285 40.3738C14.3971 36.9898 8.10238 32.7533 4.5955 26.88H2.36926C5.9395 33.6106 12.8649 38.2733 18.3571 41.9674C20.3001 43.273 23.352 45.8294 23.3827 45.8554C23.5478 45.9946 23.76 46.0598 23.975 46.0598C24.2237 46.0598 24.4761 45.9725 24.6691 45.8122C24.6979 45.7882 24.8016 45.7027 24.9254 45.6C24.9657 45.3638 25.0406 45.1018 25.1904 44.8032Z" fill="#FB3D4E"/>
+                  </svg>
+                  <div class="media-body">
+                    <h5 class="mt-0" *ngFor="let item of bpms | async">{{item.bmp}}ppm</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <li class="text" *ngFor="let item of bpms | async">
+    {{item.bmp}}
+  </li>
+  
+  <button (click)="logout()">Salir</button> -->
+</div>    
+    

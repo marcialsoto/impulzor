@@ -1,0 +1,21 @@
+
+// Fuentes
+@mixin text-render() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+  }
+    
+  @mixin font-family($font: 'Hind', $weigh: 400) {
+    font-family: $font, sans-serif;
+    font-weight: $weigh;
+  
+    @include text-render();
+  }
+  
+  @mixin font-size($sizeValue: 16, $line: $sizeValue * $line-height-base) {
+    font-size: ($sizeValue * 1) + px;
+    font-size: ($sizeValue * 0.0625) + rem;
+    line-height: ($line * 1) + px;
+    line-height: ($line * 0.0625) + rem;
+  }

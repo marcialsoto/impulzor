@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "common/variables";
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "common/mixins";
+@import "common/globals";
+
+@import "layouts/sidebar";
+
+
+
