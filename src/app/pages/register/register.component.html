@@ -1,0 +1,169 @@
+<form
+  (ngSubmit)="onSubmit(registerForm)"
+  #registerForm="ngForm"
+  class="form-signin">
+    <div class="text-center mb-4">
+      <!-- <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+      <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+      <!-- <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p> -->
+    </div>
+  
+    <div *ngIf="registerForm.submitted && registerForm.controls['email'].errors">
+      <div class="invalid-feedback d-block">
+        El correo es inválido
+      </div>
+    </div>
+
+    <div class="form-label-group">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Email address"
+        required autofocus 
+        name="email"
+        required
+        email
+        [(ngModel)]="user.email">
+      <label for="inputEmail">Correo</label>
+      
+      
+    </div>
+
+    <div *ngIf="registerForm.submitted && registerForm.controls['name'].errors">
+      <div class="invalid-feedback d-block">
+        Ingrese nombre y apellidos
+      </div>
+    </div>
+
+    <div class="form-label-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nombre y apellidos"
+        name="name"
+        [(ngModel)]="user.name"
+        required
+        minlength="2">
+      <label for="inputName">Nombre y Apellidos</label>
+      
+    </div>
+  
+    <div *ngIf="registerForm.submitted && registerForm.controls['password'].errors">
+      <div class="invalid-feedback d-block">
+        Ingrese clave de al menos 3 dígitos
+      </div>
+    </div>
+
+    <div class="form-label-group">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password" 
+        name="password"
+        [(ngModel)]="user.password"
+        required
+        minlength="3">
+      <label for="inputPassword">Clave</label>
+      
+    </div>
+
+    <div class="radio mb-3">
+      <div *ngIf="registerForm.submitted && registerForm.controls['gender'].errors">
+        <div class="invalid-feedback d-block">
+          Ingrese sexo
+        </div>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          id="radioGenderM"
+          value="M"
+          [(ngModel)]="user.gender"
+          required>
+        <label class="form-check-label" for="radioGenderM">Masculino</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          id="radioGenderF"
+          value="F"
+          [(ngModel)]="user.gender"
+          required>
+        <label class="form-check-label" for="radioGenderF">Femenino</label>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <div *ngIf="registerForm.submitted && registerForm.controls['weight'].errors">
+          <div class="invalid-feedback d-block">
+            Ingrese peso
+          </div>
+        </div>
+        <div class="input-group mb-3">      
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Peso"
+            aria-label="Peso"
+            aria-describedby="weight"
+            name="weight"
+            [(ngModel)]="user.weight"
+            required>
+          <div class="input-group-append">
+            <span class="input-group-text" id="weight">kg</span>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-6">
+        <div *ngIf="registerForm.submitted && registerForm.controls['height'].errors">
+          <div class="invalid-feedback d-block">
+            Ingrese altura
+          </div>
+        </div>
+        <div class="input-group mb-3">      
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Altura"
+            aria-label="Altura"
+            aria-describedby="height"
+            name="height"
+            [(ngModel)]="user.height"
+            required>
+          <div class="input-group-append">
+            <span class="input-group-text" id="height">cm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>
+    
+    <div class="row">
+      <div class="col-6">
+        <div class="checkbox mb-3 mt-3">
+          <label>
+            <input 
+              type="checkbox"
+              name="remember-me"
+              [(ngModel)]="rememberMe"> Recordar
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <p class=" mb-3 mt-3 text-right">
+          <a [routerLink]="[ '/login' ]">Iniciar sesión</a>
+        </p>
+      </div>
+    </div>
+    <!-- <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p> -->
+  </form>

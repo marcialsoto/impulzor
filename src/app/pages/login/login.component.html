@@ -1,0 +1,71 @@
+<form
+  (ngSubmit)="login(loginForm)"
+  #loginForm="ngForm"
+  class="form-signin">
+    <div class="text-center mb-4">
+      <!-- <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+      <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
+      <!-- <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p> -->
+    </div>
+  
+    <div *ngIf="loginForm.submitted && loginForm.controls['email'].errors">
+      <div class="invalid-feedback d-block">
+        El correo es inválido
+      </div>
+    </div>
+
+    <div class="form-label-group">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Email address"
+        required autofocus 
+        name="email"
+        required
+        email
+        [(ngModel)]="user.email">
+      <label for="inputEmail">Correo</label>
+      
+      
+    </div>
+
+    <div *ngIf="loginForm.submitted && loginForm.controls['password'].errors">
+      <div class="invalid-feedback d-block">
+        Ingrese clave de al menos 3 dígitos
+      </div>
+    </div>
+
+    <div class="form-label-group">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password" 
+        name="password"
+        [(ngModel)]="user.password"
+        required
+        minlength="3">
+      <label for="inputPassword">Clave</label>
+      
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+    
+    <div class="row">
+      <div class="col-6">
+        <div class="checkbox mb-3 mt-3">
+          <label>
+            <input 
+              type="checkbox"
+              name="remember-me"
+              [(ngModel)]="rememberMe"> Recordar
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <p class=" mb-3 mt-3 text-right">
+          <a [routerLink]="[ '/register' ]">Registrar</a>
+        </p>
+      </div>
+    </div>
+    <!-- <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p> -->
+  </form>
